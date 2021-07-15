@@ -1,12 +1,14 @@
 package banco;
 
-public class CuentaBancaria {
-    private Double saldo;
-    private String titular;
+public abstract class CuentaBancaria {
+    protected  Double saldo;
+    protected String titular;
+    protected TipoDeCuenta tipoDeCuenta;
 
-    public CuentaBancaria(String texto , double monto) {
-        this.titular = texto;
+    public CuentaBancaria(String texto, double monto, TipoDeCuenta tipo) {
         this.saldo = monto;
+        this.titular = texto;
+        this.tipoDeCuenta = tipo;
     }
 
     public Double  getSaldo() {
@@ -22,6 +24,8 @@ public class CuentaBancaria {
             this.saldo = saldo - monto;
         }
     }
+
+    public abstract void informarCondicionesLegales();
 
 
 }

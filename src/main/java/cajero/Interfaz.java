@@ -17,6 +17,7 @@ public class Interfaz {
             System.out.println("  Escriba 2 para depositar dinero");
             System.out.println("  Escriba 3 para extraer dinero");
             System.out.println("  Escriba 4 para consultar movimientos");
+            System.out.println(" Escriba 5 para consulta condciones legales");
             System.out.println(" Escriba cualquier otro numero para salir del menu");
 
             opcionSeleccionada = scanner.nextInt();
@@ -33,11 +34,14 @@ public class Interfaz {
                 case 4:
                     cajero.ultimosMovimientos();
                     break;
+                case 5:
+                    cajero.mostrarCondicionesLegales();
+                    break;
                 default:
                     cajero.salir();
             }
 
-        } while (opcionSeleccionada == 1 || opcionSeleccionada == 2 || opcionSeleccionada == 3 || opcionSeleccionada == 4);
+        } while (opcionSeleccionada == 1 || opcionSeleccionada == 2 || opcionSeleccionada == 3 || opcionSeleccionada == 4 || opcionSeleccionada == 5);
 
     }
 
