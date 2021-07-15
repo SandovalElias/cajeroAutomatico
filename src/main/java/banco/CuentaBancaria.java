@@ -1,3 +1,5 @@
+package banco;
+
 public class CuentaBancaria {
     private Double saldo;
     private String titular;

@@ -1,3 +1,5 @@
+package cajero;
+
 import java.util.Scanner;
 
 public class Interfaz {
@@ -20,7 +22,7 @@ public class Interfaz {
             opcionSeleccionada = scanner.nextInt();
             switch(opcionSeleccionada){
                 case 1 :
-                     cajero.getSaldo();
+                    cajero.getSaldo();
                     break;
                 case 2:
                     cajero.depositar();

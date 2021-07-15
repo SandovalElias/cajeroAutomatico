@@ -1,21 +1,26 @@
+package cajero;
+import banco.CuentaBancaria;
+import mock.GeneradorAleatorioDeMovimientos;
 
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.ArrayList;
 
-public class CajeroAutomatico {
-    CuentaBancaria cuentaActual;
 
-    CajeroAutomatico(String id, String password){
+
+public class CajeroAutomatico {
+   private  CuentaBancaria cuentaActual;
+
+    protected CajeroAutomatico(String id, String password){
         double cantidadAleatoria = ThreadLocalRandom.current().nextDouble(0,500000);
         cuentaActual = new CuentaBancaria("Pedro",cantidadAleatoria);
     }
 
-    public void getSaldo(){
+    protected void getSaldo(){
         System.out.println("Su saldo es " + cuentaActual.getSaldo());
     }
 
-    public void extraer(){
+    protected void extraer(){
         System.out.println("¿Cuanto dinero quiere extraer?");
         Scanner scanner = new Scanner(System.in);
         double cantidad = scanner.nextDouble();

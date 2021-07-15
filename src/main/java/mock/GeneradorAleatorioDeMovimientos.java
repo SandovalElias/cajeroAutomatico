@@ -1,3 +1,5 @@
+package mock;
+
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -9,7 +11,7 @@ public class GeneradorAleatorioDeMovimientos {
     private static final String SUELDO = "Ingrese el sueldo de ";
     private static final String PAGO_RECIBO = "Pago recibo de ";
 
-    ArrayList<String> obtenerMovimientos(int  numeroDeMovimiento , String moneda ) {
+    public ArrayList<String> obtenerMovimientos(int numeroDeMovimiento, String moneda) {
         ArrayList<String> movimientos = new ArrayList<>();
         for(int i =0 ; i < numeroDeMovimiento ; i++){
            int numeroDeMovimientos = obtenerMovimientoAleatorio(1,6);
@@ -41,11 +43,11 @@ public class GeneradorAleatorioDeMovimientos {
         return movimientos;
     }
 
-    private int obtenerMovimientoAleatorio(int min, int max){
+    public int obtenerMovimientoAleatorio(int min, int max){
         return ThreadLocalRandom.current().nextInt(min,max + 1 );
     }
 
-    private Double obtenerDoubleAleatorio(Double min ,Double max){
+    public Double obtenerDoubleAleatorio(Double min ,Double max){
         return ThreadLocalRandom.current().nextDouble(min ,max + 1.0);
     }
 }
